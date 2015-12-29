@@ -1,0 +1,102 @@
+
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'animations.scss';
+@import 'fonts.scss';
+
+
+#tgt_gohabanero_site_wrapper{
+
+	#main {
+		font-family:'Helvetica Neue', 'Arial', Sans-Serif;
+		text-align:center;
+		max-width:768px;
+		margin:2em auto 0;
+
+		a, a:hover {
+			text-decoration:none;
+		}
+
+		#label {
+			width:50%;
+			padding:20px;
+			border:$border;
+			margin:0 auto;
+		}
+
+
+	}
+}
+#flavors {
+	h2 {
+		margin:0 0 0.2em 0;
+		font-family:'Rochester';
+		font-size:3em;
+	}
+}
+.btn-container{
+	position:relative;
+}
+.btn {    
+	padding: 1em 2em;
+	@include feature_btn($orange, $dark_orange);
+    display: block;
+    font-family:"Disco";
+    text-transform: uppercase;
+    font-size: 1em;
+    font-weight:bold;
+    width:45%;
+    border-radius:10px;
+    color:#ffffff;
+ 	&:hover {
+ 		text-decoration:none;
+ 	}
+}
+.btn-clear{
+	background:0 none;
+}
+.center {
+	margin:20px auto;
+}
+.icon {
+	display:block;
+	width:30%;
+	float:left;
+	margin:0 10px;
+	img {
+		width:100%;
+	}
+
+}
+
+#social {
+	display:block;
+	overflow:hidden;
+	margin:0 auto;
+	width:50%;
+	padding-left:15%;
+}
+
+/*==================================*/
+/*           Animations             */
+/*==================================*/
+#logo.green, .orange_text.green {
+	@include animation(0, 4s, fill_green, forwards);
+}
+#logo.red, .orange_text.red {
+	@include animation(0, 4s, fill_red, forwards);
+}
+#logo.orange, .orange_text.orange {
+	@include animation(0, 4s, fill_orange, forwards);
+}
+
+
+.btn.green {
+	@include animation(0, 4s, btn_fill_green, forwards);
+}
+.btn.red {
+	@include animation(0, 4s, btn_fill_red, forwards);
+}
+.btn.orange {
+	@include animation(0, 4s, btn_fill_orange, forwards);
+}

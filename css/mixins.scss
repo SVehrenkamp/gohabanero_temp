@@ -1,0 +1,68 @@
+/*Mixins*/
+@mixin prefix($property){
+
+}
+
+@mixin keyframe ($animation_name) {
+    @-webkit-keyframes #{$animation_name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$animation_name} {
+        @content;
+    }
+
+    @-o-keyframes #{$animation_name} {
+        @content;
+    }
+
+    @keyframes #{$animation_name} {
+        @content;
+    }
+}
+
+@mixin animation ($delay, $duration, $animation, $fill:"") {
+    -webkit-animation-delay: $delay;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-name: $animation;
+    @if $fill == forwards{
+    	-webkit-animation-fill-mode: $fill; /* this prevents the animation from restarting! */
+	}
+	@else {
+		-webkit-animation-iteration-count:infinite;
+	}
+    -moz-animation-delay: $delay;
+    -moz-animation-duration: $duration;
+    -moz-animation-name: $animation;
+    @if $fill == forwards {
+    	-moz-animation-fill-mode: $fill; /* this prevents the animation from restarting! */
+	}
+	@else {
+		-moz-animation-iteration-count:infinite;
+	}
+    -o-animation-delay: $delay;
+    -o-animation-duration: $duration;
+    -o-animation-name: $animation;
+    @if $fill == forwards {
+    	-o-animation-fill-mode: $fill; /* this prevents the animation from restarting! */
+	}
+	@else {
+		-o-animation-iteration-count:infinite;
+	}
+
+    animation-delay: $delay;
+    animation-duration: $duration;
+    animation-name: $animation;
+    @if $fill == forwards {
+    	animation-fill-mode: $fill; /* this prevents the animation from restarting! */
+    }
+	@else {
+		animation-iteration-count:infinite;
+	}
+}
+
+@mixin feature_btn($background, $border) {
+	background:$background;
+	border-bottom:5px solid $border;
+}
+

@@ -1,0 +1,77 @@
+@keyframes spin {
+	0%{
+		transform: rotate(0deg);
+		transform-origin: center center;
+	}
+	100% {
+		transform:rotate(360deg);
+		transform-origin: center center;
+	}
+}
+
+
+
+@keyframes fill_fade {
+	0%{
+		fill: $orange;
+	}
+	33%{
+		fill: $red;
+	}
+	66%{
+		fill: $green;
+	}
+	100% {
+		fill:$orange;
+	}
+}
+
+
+@include keyframe(btn_fill_fade) {
+	0%{
+		@include feature_btn($orange, $dark_orange);
+	}
+	33%{
+		@include feature_btn($red, $dark_red);
+	}
+	
+	66%{
+		@include feature_btn($green, $dark_green);
+	}
+	100% {
+		@include feature_btn($orange, $dark_orange);
+	}
+}
+
+
+@include keyframe(fill_orange) {
+    100% {
+        fill: $orange;
+    }
+}
+
+@include keyframe(fill_red) {
+    100% {
+        fill: $red;
+    }
+}
+@include keyframe(fill_green) {
+    100% {
+        fill: $green;
+    }
+}
+
+@include keyframe(btn_fill_orange) {
+    100% {
+        @include feature_btn($orange, $dark_orange);
+    }
+}
+
+@include keyframe(btn_fill_red) {
+    100% {
+        @include feature_btn($red, $dark_red);  }
+}
+@include keyframe(btn_fill_green) {
+    100% {
+        @include feature_btn($green, $dark_green);    }
+}
